@@ -3,10 +3,28 @@ const Like = require('./model')
 
 const router = new Router()
 
-router.get('/likes', (request, response) => {
-    Like.findAll().then(likes => {
-    console.log(`I found these likes: ${houses}`)
-  })
+// const requireUser = (req, res, next) => {
+//     if (req.user) next()
+//     else res.status(401).send({
+//         message: 'Please login'
+//     })
+// }
+
+router.get('/likes', (req, res) => {
+    Like.findAll({
+        attributes: ['id', 'breed']
+    })
+      .then(result => {
+        // do something with result
+
+        res.send({
+            likes: result
+        })
+      })
+      .catch(err => {
+        // there was an error, return some HTTP error code
+        res.status(500).send({error: 'Something went wrong with Postgres'})
+      })
 })
 
 

@@ -19,3 +19,5 @@ const Like = sequelize.define(
         timestamps: false
       }
 )
+
+module.exports = Like
