@@ -1,4 +1,5 @@
 const express = require('express')
+const { Client } = require('pg')
 const app = express()
 
 var Sequelize = require('sequelize')
@@ -12,3 +13,10 @@ app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
     next()
   })
+
+
+
+const connectionString = 'postgresql://postgres:secret@localhost:5432/postgres'
+const client = new Client({ connectionString })
+
+client.connect()
