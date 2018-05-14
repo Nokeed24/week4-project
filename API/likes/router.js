@@ -29,7 +29,11 @@ router.get('/likes', (req, res) => {
 
 router.get('/likes/:id', (req, res) => {
   const id = req.params.id
-	Like.findById(id)
+  Like.findAll({
+    where: {
+      id: id
+    }
+  })
 	  .then(result => {
 	  	if (!result) {
 	  		res.status(404).send({error: 'Does not exist'})
@@ -41,6 +45,18 @@ router.get('/likes/:id', (req, res) => {
 	  .catch(err => {
 	    res.status(500).send({error: 'Something went wrong with Postgres'})
 	  })
+	// Like.findById(id)
+	//   .then(result => {
+	//   	if (!result) {
+	//   		res.status(404).send({error: 'Does not exist'})
+	//   	}
+	//   	else {
+	//   		res.send(result)
+	//   	}
+	//   })
+	//   .catch(err => {
+	//     res.status(500).send({error: 'Something went wrong with Postgres'})
+	//   })
 })
 
 //router.post('/likes', requireUser, (req, res) => {
