@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-export default class LikeButton extends PureComponent {
+export default class Matches extends PureComponent {
   static propTypes = {
     onClick: PropTypes.func.isRequired
   }
 
   render() {
     return (
-      <button className="like" onClick={this.props.onClick}>like</button>
+      <button className="like" onClick={this.props.onClick}>Matches</button>
     )
   }
 }
