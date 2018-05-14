@@ -6,6 +6,7 @@ const Like = sequelize.define(
     {
         id: {
             type: Sequelize.INTEGER,
+            primaryKey: true,
             allowNull: false
         },
         breed: {
