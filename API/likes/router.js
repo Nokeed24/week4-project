@@ -11,9 +11,7 @@ const router = new Router()
 // }
 
 router.get('/likes', (req, res) => {
-	Like.findAll({
-	  attributes: ['id', 'breed']
-	})
+	Like.findAll()
 	  .then(result => {
 	    // do something with result
 	    res.send({

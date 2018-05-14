@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
   })
 
 
-const connectionString = 'postgresql://postgres:secret@localhost:5432/postgres'
+const connectionString = 'postgresql://postgres:password@localhost:5432/postgres'
 const client = new Client({ connectionString })
 
 client.connect()
