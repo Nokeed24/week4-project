@@ -1,9 +1,14 @@
 const Sequelize = require("sequelize")
 const sequelize = require("../db")
 
-const Like = sequelize.define(
-    "like",
+const User = sequelize.define(
+    "users",
     {
+        id: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            allowNull: false
+        },
         email: {
             type: Sequelize.STRING,
             allowNull: false
@@ -18,3 +23,5 @@ const Like = sequelize.define(
         timestamps: false
       }
 )
+
+module.exports = User
