@@ -4,7 +4,7 @@ const sequelize = require("../db")
 const Like = sequelize.define(
     "like",
     {
-        userId: {
+        id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
