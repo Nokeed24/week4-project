@@ -1,8 +1,8 @@
 import breeds from './breeds'
-import breed from './breed'
+import breed from './breeds'
 import login from './login'
-import currentUser from './currentUser'
-import signup from './signup'
+import currentUser from './login'
+import signup from './login'
 
 export default {
   breeds,
