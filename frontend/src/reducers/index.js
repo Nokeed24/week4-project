@@ -2,7 +2,7 @@
 import breed from './breed'
 import login from './login'
 import currentUser from './currentUser'
-import signup from './signup'
+import signup from './signUp'
 
 export default {
   // breeds,
