@@ -9,7 +9,7 @@ router.post('/users', (req, res) => {
   const user = {
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 10),
-    likes: req.body.likes
+    likes: 0
   }
   console.log(user, "USER"),
 
@@ -19,7 +19,6 @@ router.post('/users', (req, res) => {
     res.send({
       id: entity.id,
       email: entity.email,
-      password: entity.password,
       likes: entity.likes
     })
   })

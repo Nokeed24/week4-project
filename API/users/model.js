@@ -14,7 +14,7 @@ const User = sequelize.define(
         },
         likes: {
             type: Sequelize.INTEGER,
-            allowNull: false
+            allowNull: true
         }
     },
     {

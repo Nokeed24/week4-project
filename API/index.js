@@ -53,10 +53,10 @@ app.use(function (req, res, next) {
   else next()
 })
 
+app.use(usersRouter)
+app.use(likesRouter)
+
 const connectionString = 'postgresql://postgres:password@localhost:5432/postgres'
 const client = new Client({ connectionString })
 
 client.connect()
-
-app.use(usersRouter)
-app.use(likesRouter)
