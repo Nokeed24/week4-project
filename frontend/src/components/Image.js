@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
-import {fetchRandom} from '../actions/breeds'
+import {fetchRandom,setBreedName} from '../actions/breeds'
 import{getBreedName} from "../lib/functions"
 import './Image.css'
 
@@ -22,6 +22,7 @@ class Image extends PureComponent {
 
   render() {
     const {breed} = this.props
+    setBreedName(breed)
     return (
       <div>
         <img className='image' src={breed} alt='Dogs'/>
@@ -37,4 +38,4 @@ const mapStateToProps = ({breed}) => ({
   //random: fetchRandom()
 })
 
-export default connect(mapStateToProps, {fetchRandom})(Image)
+export default connect(mapStateToProps, {fetchRandom, setBreedName})(Image)

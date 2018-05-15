@@ -1,9 +1,10 @@
 import * as request from 'superagent'
+import {getBreedName} from '../lib/functions'
 
 export const FETCHED_DETAILED_BREED = 'FETCHED_DETAILED_BREED'
 export const FETCHED_ALL_BREEDS = 'FETCHED_ALL_BREEDS'
 export const FETCHED_RANDOM_BREED = 'FETCHED_RANDOM_BREED'
-
+export const SET_BREED_NAME = 'SET_BREED_NAME'
 const baseUrl = 'https://dog.ceo/api/breeds'
 
 export const fetchRandom = () => (dispatch) => {
@@ -13,6 +14,17 @@ export const fetchRandom = () => (dispatch) => {
       type: FETCHED_RANDOM_BREED,
       payload: response.body.message
     }))
+}
+
+export const setBreedName = (url) => {
+  const breedName = getBreedName(url)
+  return {
+    type: SET_BREED_NAME,
+    payload: {
+      breedName
+    }
+  }
+
 }
 
 export const oneBreed = (action) => {

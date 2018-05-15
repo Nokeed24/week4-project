@@ -1,12 +1,12 @@
 
-//this would also be for breeds
+import {FETCHED_RANDOM_BREED, FETCHED_DETAILED_BREED,SET_BREED_NAME} from '../actions/breeds'
 
-import {FETCHED_ALL_BREEDS} from '../actions/breeds'
-
-export default function (state = [], action) {
-  switch (action.type) {
-  case FETCHED_ALL_BREEDS:
-    return action.payload
+export default function (state = "", {type, payload}) {
+  switch (type) {
+  case FETCHED_RANDOM_BREED:
+    return payload
+  case SET_BREED_NAME:
+    return state  
 
     // case ADD_PRODUCT:
   	//   return [...state, action.payload]

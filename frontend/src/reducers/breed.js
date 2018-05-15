@@ -1,16 +1,16 @@
 
 //This would be breeds instead of products
 
-import {FETCHED_ALL_BREEDS, FETCHED_RANDOM_BREED, FETCHED_DETAILED_BREED} from '../actions/breeds'
+import {FETCHED_ALL_BREEDS, FETCHED_RANDOM_BREED, FETCHED_DETAILED_BREED,SET_BREED_NAME} from '../actions/breeds'
 
 
-export default function (state = "", action) {
-  switch (action.type) {
-  case FETCHED_DETAILED_BREED:
-    return action.payload
+export default function (state = "", {type, payload}) {
+  switch (type) {
   case FETCHED_RANDOM_BREED:
-    return action.payload
-  // case UPDATE_PRODUCT:
+    return payload
+  case SET_BREED_NAME:
+    return payload  
+   // case UPDATE_PRODUCT:
 	 //   if (action.payload.id === state.id) {
 	 //     return action.payload
 	 //   }
