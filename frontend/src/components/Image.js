@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
+import{getBreedName} from "../lib/functions"
 import './Image.css'
 
 // import PropTypes from 'prop-types'
@@ -12,19 +13,19 @@ class Image extends PureComponent {
 
   }
 
-  getBreedName(breed)
-  {
-    const breedName = breed.split('/')
-    const newBreed = breedName[4]
-    return newBreed
-  }
+  // getBreedName(breed)
+  // {
+  //   const breedName = breed.split('/')
+  //   const newBreed = breedName[4]
+  //   return newBreed
+  // }
 
   render() {
     const {breed} = this.props
     return (
       <div>
         <img className='image' src={breed} alt='Dogs'/>
-        <p>{this.getBreedName(breed)}</p>
+        <p>{getBreedName(breed)}</p>
       </div>
     )
   }
@@ -33,7 +34,7 @@ class Image extends PureComponent {
 
 const mapStateToProps = ({breed}) => ({
   breed,
-  random: fetchRandom()
+  //random: fetchRandom()
 })
 
 export default connect(mapStateToProps, {fetchRandom})(Image)
