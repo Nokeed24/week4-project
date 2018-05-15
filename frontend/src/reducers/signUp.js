@@ -2,7 +2,6 @@ import {USER_SIGNUP_SUCCESS, USER_SIGNUP_FAILED} from '../actions/users';
 
 export default function(state = {}, action) {
   switch (action.type) {
-  // ... implement!
   case USER_SIGNUP_SUCCESS:
     return {
       success: true
