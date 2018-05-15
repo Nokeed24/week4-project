@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const { Client } = require('pg')
 const likesRouter = require('./likes/router')
 const usersRouter = require('./users/router')
