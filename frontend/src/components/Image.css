@@ -1,0 +1,8 @@
+.image {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  width: 350px;
+  object-fit: scale-down;
+  border-radius: 10px;
+}

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
-import '../containers/Board.css'
+import './Matches.css'
+
 
 export default class Matches extends PureComponent {
 

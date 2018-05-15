@@ -1,0 +1,12 @@
+.like__no {
+  background-color: red;
+}
+
+.like__no:hover {
+  transition: 1s;
+  background-color:rgba(255,0,0,0.3);
+}
+
+.like__no:focus {
+    outline: none;
+}

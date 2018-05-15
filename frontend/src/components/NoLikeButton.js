@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
-import '../containers/Board.css'
+import './NoLikeButton.css'
+
 
 export default class NoLikeButton extends PureComponent {
 

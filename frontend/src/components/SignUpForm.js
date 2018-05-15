@@ -1,4 +1,6 @@
 import React, {PureComponent} from 'react'
+import './SignUpForm.css'
+
 
 export default class LoginForm extends PureComponent {
 	state = {}
