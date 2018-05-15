@@ -1,18 +1,30 @@
 import React, { PureComponent } from 'react'
+import {connect} from 'react-redux'
+import {fetchRandom} from '../actions/breeds'
 // import PropTypes from 'prop-types'
 
-export default class Image extends PureComponent {
-    static propTypes = {
-        // RandomDog: PropTypes.func.isRequired
-    }
-    render() {
-        // const doggo = 'href=https://www.pexels.com/photo/adorable-animal-breed-canine-356378/'
+class Image extends PureComponent {
 
-        return (
-        <div>
-            <p>IMAGE GOES HERE</p>
-        </div>
-        )
-    }
+  componentWillMount(props) {
+    this.props.fetchRandom()
+  }
+
+
+  render() {
+    const {breed} = this.props
+    return (
+      <div>
+        <p>IMAGE GOES HERE</p>
+        <img src={breed} />
+      </div>
+    )
+  }
 
 }
+
+const mapStateToProps = ({breed}) => ({
+  breed,
+  random: fetchRandom()
+})
+
+export default connect(mapStateToProps, {fetchRandom})(Image)

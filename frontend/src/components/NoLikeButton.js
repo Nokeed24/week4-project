@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 
 export default class NoLikeButton extends PureComponent {
-  static propTypes = {
-    onClick: PropTypes.func.isRequired
-  }
 
   render() {
     return (

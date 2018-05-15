@@ -8,18 +8,19 @@ const router = new Router()
 router.post('/users', (req, res) => {
   const user = {
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 10)
+    password: bcrypt.hashSync(req.body.password, 10),
+    likes: req.body.likes
   }
   console.log(user, "USER"),
 
   User
   .create(user)
   .then(entity => {
-
     res.send({
       id: entity.id,
       email: entity.email,
-      password: entity.password
+      password: entity.password,
+      likes: entity.likes
     })
   })
   .catch(err => {
