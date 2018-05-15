@@ -14,18 +14,12 @@ export default class Board extends PureComponent {
     return (
 
       <div className='Board'>
-        <div className="image">
-          <Image />
-        </div>
-
-        <div className='Board'>
+        <Image />
+        <div className='like-buttons'>
           <LikeButton />
           <NoLikeButton />
         </div>
-
-        <div className='Board'>
-          <Matches />
-        </div>
+        <Matches />
       </div>
     )
   }

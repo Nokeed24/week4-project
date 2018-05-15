@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
+import '../containers/Board.css'
 // import PropTypes from 'prop-types'
 
 class Image extends PureComponent {
@@ -14,8 +15,7 @@ class Image extends PureComponent {
     const {breed} = this.props
     return (
       <div>
-        <p>IMAGE GOES HERE</p>
-        <img src={breed} />
+        <img className='image' src={breed} alt='Dogs'/>
       </div>
     )
   }

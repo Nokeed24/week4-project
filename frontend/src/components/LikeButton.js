@@ -4,7 +4,7 @@ export default class LikeButton extends PureComponent {
 
   render() {
     return (
-      <button className="like" onClick={this.props.onClick}>like</button>
+      <button className="like like__yes" onClick={this.props.onClick}>like</button>
     )
   }
 }
