@@ -1,7 +1,14 @@
-.App h1{
-  text-align: center;
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 5px solid #ccc; */
+    align-items: center;
 }
-
+.title {
+    margin-bottom: 30px;
+    margin-top: 0;
+}
 html body .App {
   height: 100vh;
   width: 100vw;

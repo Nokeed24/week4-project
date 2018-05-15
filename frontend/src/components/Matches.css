@@ -1,0 +1,12 @@
+.like__match {
+  background-color: blue;
+}
+
+.like__match:hover {
+  transition: 1s;
+  background-color:rgba(0,0,255,0.3);
+}
+
+.like__match:focus {
+    outline: none;
+}

@@ -1,57 +1,6 @@
 .Board {
- display: flex;
- flex-direction: column;
- justify-content: center;
- height: 80vh;
- border: 5px solid #ccc;
- align-items: center;
-
-}
-
-.image {
-  display: flex;
-  justify-content: center;
-  width: 60vw;
-  height: auto;
-  border-radius: 20px;
-}
-
-.like-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 40vw;
-}
-
-.like {
-  width: 14vw;
-  height: 5vh;
-  border-radius: 5px;
-  margin-top: 2vh;
-}
-
-.like__yes {
-  background-color: green;
-}
-
-.like__yes:hover {
-  transition: 1s;
-  background-color:rgba(0,255,0,0.3);
-}
-
-.like__no {
-  background-color: red;
-}
-
-.like__no:hover {
-  transition: 1s;
-  background-color:rgba(255,0,0,0.3);
-}
-
-.like__match {
-  background-color: blue;
-}
-
-.like__match:hover {
-  transition: 1s;
-  background-color:rgba(0,0,255,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
