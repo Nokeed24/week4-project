@@ -45,18 +45,6 @@ router.get('/likes/:id', (req, res) => {
 	  .catch(err => {
 	    res.status(500).send({error: 'Something went wrong with Postgres'})
 	  })
-	// Like.findById(id)
-	//   .then(result => {
-	//   	if (!result) {
-	//   		res.status(404).send({error: 'Does not exist'})
-	//   	}
-	//   	else {
-	//   		res.send(result)
-	//   	}
-	//   })
-	//   .catch(err => {
-	//     res.status(500).send({error: 'Something went wrong with Postgres'})
-	//   })
 })
 
 //router.post('/likes', requireUser, (req, res) => {
