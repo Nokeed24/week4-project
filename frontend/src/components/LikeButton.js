@@ -21,7 +21,9 @@ export class LikeButton extends PureComponent {
 
   render() {
     return (
-      <button className="like like__yes" onClick={this.onClick}>Like</button>
+      <button className="like like__yes" onClick={this.onClick}>
+        <i class="fas fa-check-circle fa-5x"></i>
+      </button>
     )
   }
 }

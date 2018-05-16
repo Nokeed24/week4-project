@@ -1,12 +1,16 @@
-.like__match {
-  background-color: blue;
-}
-
-.like__match:hover {
-  transition: 1s;
-  background-color:rgba(0,0,255,0.3);
+ .like__match {
+    color: #e88b12;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .like__match:focus {
     outline: none;
+}
+
+.match-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
