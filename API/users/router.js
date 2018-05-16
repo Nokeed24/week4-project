@@ -11,7 +11,6 @@ router.post('/users', (req, res) => {
     password: bcrypt.hashSync(req.body.password, 10),
     likes: 0
   }
-  console.log(user, "USER"),
 
   User
   .create(user)
@@ -30,16 +29,13 @@ router.post('/users', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  console.log('MESSAGE', req.body)
   User.findOne({
     where: {
       email: req.body.email
     }
   })
   .then(entity => {
-    console.log('ENTITY', entity.id)
     if (bcrypt.compareSync(req.body.password, entity.password)) {
-      console.log('PASSWORD', entity.password)
       res.send({
         jwt: sign(entity.id),
         id: entity.id
@@ -59,20 +55,24 @@ router.post('/login', (req, res) => {
   })
 })
 
-router.get('/main', (req, res) => {
-  console.log('JWTJWT', req.user)
-  if (req.user) {
-	   res.send({
-       message: 'Welcome in the secret corner of this API'
-     })
-   }
-   else {
-     res.status(401).send({
-       message: 'Please login!'
-     })
-   }
+router.put('/users/:id', (req, res) => {
+  const userId = Number(req.params.id)
+  const updates = req.body
+  User.findById(req.params.id)
+    .then(entity => {
+      // change the product and store in DB
+      entity.update(updates)
+    })
+    .then(final => {
+      res.send(final)
+    })
+    .catch(error => {
+      res.status(500).send({
+        message: `Something went wrong`,
+        error
+      })
+    })
+
 })
-
-
 
 module.exports = router
