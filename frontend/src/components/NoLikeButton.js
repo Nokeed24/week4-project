@@ -12,8 +12,8 @@ export class NoLikeButton extends PureComponent {
   
   onClick = () => 
   {
-    const {fetchRandom} = this.props
-    fetchRandom()    
+    const {url, fetchRandom} = this.props
+    fetchRandom() 
   }
 
   render() {
@@ -22,5 +22,12 @@ export class NoLikeButton extends PureComponent {
     )
   }
 }
+
+const mapStateToProps = ({breed, url}) => ({
+  breed,
+  url
+  //random: fetchRandom()
+})
+
 
 export default connect(null, { fetchRandom })(NoLikeButton)

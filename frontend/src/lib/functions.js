@@ -1,6 +1,6 @@
-export const getBreedName = (breed) => {
+export const getBreedName = (url) => {
     {
-        const breedName = breed.split('/')
+        const breedName = url.split('/')
         const newBreed = breedName[4]
         return newBreed
     }

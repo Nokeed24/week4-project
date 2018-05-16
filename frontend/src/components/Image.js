@@ -13,28 +13,20 @@ class Image extends PureComponent {
 
   }
 
-  // getBreedName(breed)
-  // {
-  //   const breedName = breed.split('/')
-  //   const newBreed = breedName[4]
-  //   return newBreed
-  // }
-
   render() {
-    const {breed} = this.props
+    const {breed, url, setName} = this.props
     return (
       <div>
-        <img className='image' src={breed} alt='Dogs'/>
-        <p>{getBreedName(breed)}</p>
+        <img className='image' src={url} alt='Dogs'/>
+        <p>{breed}</p>
       </div>
     )
   }
-
 }
 
-const mapStateToProps = ({breed}) => ({
+const mapStateToProps = ({breed, url}) => ({
   breed,
-  //random: fetchRandom()
+  url
 })
 
 export default connect(mapStateToProps, {fetchRandom})(Image)
