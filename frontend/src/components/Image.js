@@ -21,20 +21,21 @@ class Image extends PureComponent {
   // }
 
   render() {
-    const {breed} = this.props
-    setBreedName(breed)
+    const {breed, url, setName} = this.props
+    setName
     return (
       <div>
-        <img className='image' src={breed} alt='Dogs'/>
-        <p>{getBreedName(breed)}</p>
+        <img className='image' src={url} alt='Dogs'/>
+        <p>{breed}</p>
       </div>
     )
   }
-
 }
 
-const mapStateToProps = ({breed}) => ({
+const mapStateToProps = ({breed, url}) => ({
   breed,
+  url,
+  setName: setBreedName(url)
   //random: fetchRandom()
 })
 
