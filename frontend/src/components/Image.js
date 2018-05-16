@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
+import { fetchLikesForId } from '../actions/users'
 import './Image.css'
 
 // import PropTypes from 'prop-types'
@@ -8,8 +9,9 @@ import './Image.css'
 class Image extends PureComponent {
 
   componentWillMount(props) {
+    const {currentUser, fetchLikesForId} = this.props
     this.props.fetchRandom()
-
+    this.props.fetchLikesForId(currentUser.id)
   }
 
   render() {
@@ -23,9 +25,13 @@ class Image extends PureComponent {
   }
 }
 
-const mapStateToProps = ({breed, url}) => ({
+const mapStateToProps = ({breed, url, currentUser, likes, like}) => ({
   breed,
-  url
+  url,
+  currentUser,
+  likes,
+  like
+
 })
 
-export default connect(mapStateToProps, {fetchRandom})(Image)
+export default connect(mapStateToProps, {fetchRandom, fetchLikesForId})(Image)

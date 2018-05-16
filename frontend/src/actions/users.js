@@ -70,7 +70,6 @@ export const fetchLikesForId = (id) => dispatch => {
 export const postLike = (like) => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt
-  console.log("this is the like to write", like)
 
   request
     .post(`${baseUrl}/likes/`)
