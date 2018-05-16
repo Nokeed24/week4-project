@@ -8,7 +8,6 @@ export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS'
 export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED'
 
 export const login = (email, password) => (dispatch) => {
-  console.log(email)
   request
     .post(`${baseUrl}/login`)
     .send({ email, password })

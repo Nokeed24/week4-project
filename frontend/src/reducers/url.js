@@ -1,12 +1,12 @@
 
-import {FETCHED_RANDOM_BREED, FETCHED_DETAILED_BREED,SET_BREED_NAME} from '../actions/breeds'
+import {FETCHED_RANDOM_BREED} from '../actions/breeds'
 
 export default function (state = "", {type, payload}) {
   switch (type) {
   case FETCHED_RANDOM_BREED:
     return payload
   // case SET_BREED_NAME:
-  //   return state  
+  //   return state
 
     // case ADD_PRODUCT:
   	//   return [...state, action.payload]

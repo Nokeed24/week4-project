@@ -1,21 +1,21 @@
 import React, { PureComponent } from 'react'
 import LikeButton from '../components/LikeButton'
 import NoLikeButton from '../components/NoLikeButton'
+import {connect} from 'react-redux'
 import Matches from '../components/Matches'
 import Image from '../components/Image'
-// import SignupPage from '../components/SignupPage'
-// import LoginPage from '../components/LoginPage'
+import {Redirect} from 'react-router-dom'
 import './Board.css'
 
 
-export default class Board extends PureComponent {
+class Board extends PureComponent {
 
   render() {
 
-
+    const {currentUser} = this.props
     return (
-
       <div className='Board'>
+        { currentUser &&
         <div>
           <Image />
           <div className='like-buttons'>
@@ -23,8 +23,17 @@ export default class Board extends PureComponent {
             <NoLikeButton />
           </div>
           <Matches />
-        </div>
+        </div>}
+        { !currentUser && <Redirect to="/login" />}
       </div>
     )
   }
 }
+
+const mapStateToProps = function (state) {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(Board)
