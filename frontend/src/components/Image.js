@@ -16,8 +16,9 @@ class Image extends PureComponent {
     const {breed, url} = this.props
     return (
       <div>
+        <h1 className="title"> The Dog Tinder!</h1>
         <img className='image' src={url} alt='Dogs'/>
-        <p>{breed}</p>
+        <p className='breed'>{breed.charAt(0).toUpperCase() + breed.slice(1)}</p>
       </div>
     )
   }
