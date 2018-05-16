@@ -1,0 +1,12 @@
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em;
+    margin-top: 0;
+}
+
+.signup-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

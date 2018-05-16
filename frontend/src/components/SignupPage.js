@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {signup} from '../actions/users'
 import SignUpForm from './SignUpForm'
 import {Redirect} from 'react-router-dom'
-// import './SignupPage.css'
+import './SignupPage.css'
 
 
 class SignupPage extends PureComponent {

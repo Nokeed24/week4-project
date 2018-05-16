@@ -19,7 +19,7 @@ export default class SignUpForm extends PureComponent {
 
  	render() {
 	 	return (
-	 		<form onSubmit={this.handleSubmit}>
+	 		<form classname='form-signup' onSubmit={this.handleSubmit}>
 	 			<div className='email-div'>
 	 				<label htmlFor="email">Email</label>
 	 				<input type="email" name="email" className="email" value={

@@ -10,7 +10,6 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1 className="title"> The Dog Tinder!</h1>
           <Route exact path='/main' component={Board} />
           <Route exact path='/' render={ () => <Redirect to='/main' /> } />
           <Route exact path='/login' component={LoginPage} />
