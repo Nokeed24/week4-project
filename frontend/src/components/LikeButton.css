@@ -1,23 +1,15 @@
 .like-buttons {
   display: flex;
-  justify-content: space-between;
-  width: 350px;
-}
-
-.like {
-  width: 14vw;
-  height: 5vh;
-  border-radius: 5px;
-  margin-top: 2vh;
+  justify-content: center;
 }
 
 .like__yes {
-  background-color: green;
-}
-
-.like__yes:hover {
-  transition: 0.3s;
-  background-color:rgba(0,255,0,0.3);
+    color: green;
+    padding: 0;
+    border: none;
+    background: none;
+    margin-right: 60px;
+    margin-bottom: 30px;
 }
 
 .like__yes:focus {

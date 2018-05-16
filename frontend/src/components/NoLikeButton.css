@@ -1,10 +1,10 @@
 .like__no {
-  background-color: red;
-}
-
-.like__no:hover {
-  transition: 1s;
-  background-color:rgba(255,0,0,0.3);
+    color: red;
+    padding: 0;
+    border: none;
+    background: none;
+    margin-left: 60px;
+    margin-bottom: 30px;
 }
 
 .like__no:focus {

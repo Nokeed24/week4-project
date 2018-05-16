@@ -22,7 +22,9 @@ class Board extends PureComponent {
             <LikeButton />
             <NoLikeButton />
           </div>
-          <Matches />
+          <div className='match-buttons'>
+            <Matches />
+          </div>
         </div>}
         { !currentUser && <Redirect to="/login" />}
       </div>
