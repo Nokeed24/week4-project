@@ -19,10 +19,9 @@ class LoginPage extends PureComponent {
     // if (this.props.currentUser) return (
     //   <Redirect to='/' />
     // )
-
     return (
       <div className='login-div'>
-        <h1>Login</h1>
+        <h1 className='greeting'>Welcome to Dog Tinder!</h1>
 
         <LoginForm onSubmit={this.handleSubmit} />
 
