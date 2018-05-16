@@ -58,7 +58,7 @@ router.post('/login', (req, res) => {
   })
 })
 
-router.get('/secret', (req, res) => {
+router.get('/main', (req, res) => {
   console.log('JWTJWT', req.user)
   if (req.user) {
 	   res.send({
