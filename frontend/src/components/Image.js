@@ -1,20 +1,19 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
-import{getBreedName} from "../lib/functions"
 import './Image.css'
 
 // import PropTypes from 'prop-types'
 
 class Image extends PureComponent {
-  
+
   componentWillMount(props) {
     this.props.fetchRandom()
 
   }
 
   render() {
-    const {breed, url, setName} = this.props
+    const {breed, url} = this.props
     return (
       <div>
         <img className='image' src={url} alt='Dogs'/>

@@ -2,7 +2,8 @@ import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {signup} from '../actions/users'
 import SignUpForm from './SignUpForm'
-import './SignupPage.css'
+import {Redirect} from 'react-router-dom'
+// import './SignupPage.css'
 
 
 class SignupPage extends PureComponent {
@@ -12,9 +13,9 @@ class SignupPage extends PureComponent {
 
 	render() {
 	  console.log(this.props)
-	  // if (this.props.signup.success) return (
-	  //   <Redirect to="/" />
-	  // )
+	  if (this.props.signup.success) return (
+	    <Redirect to="/" />
+	  )
 
 	  return (
 	    <div className='signup-div'>

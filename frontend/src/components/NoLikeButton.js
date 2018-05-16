@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchRandom } from '../actions/breeds'
 import './NoLikeButton.css'
@@ -9,11 +8,11 @@ export class NoLikeButton extends PureComponent {
   static propTypes = {
 
   }
-  
-  onClick = () => 
+
+  onClick = () =>
   {
-    const {url, fetchRandom} = this.props
-    fetchRandom() 
+    const {fetchRandom} = this.props
+    fetchRandom()
   }
 
   render() {
@@ -22,12 +21,5 @@ export class NoLikeButton extends PureComponent {
     )
   }
 }
-
-const mapStateToProps = ({breed, url}) => ({
-  breed,
-  url
-  //random: fetchRandom()
-})
-
 
 export default connect(null, { fetchRandom })(NoLikeButton)
