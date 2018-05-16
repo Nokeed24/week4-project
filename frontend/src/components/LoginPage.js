@@ -24,7 +24,7 @@ class LoginPage extends PureComponent {
 
     return (
       <div className='login-div'>
-        <h1>Login</h1>
+        <h1 className='greeting'>Welcome to Dog Tinder!</h1>
 
         <LoginForm onSubmit={this.handleSubmit} />
 
