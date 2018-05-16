@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {signup} from '../actions/users'
 import SignUpForm from './SignUpForm'
+import './SignupPage.css'
 
 
 class SignupPage extends PureComponent {
