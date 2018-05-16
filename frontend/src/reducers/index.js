@@ -6,7 +6,6 @@ import signup from './signUp'
 import url from './url'
 
 export default {
-  // breeds,
   breed,
   url,
   login,

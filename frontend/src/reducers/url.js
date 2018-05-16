@@ -5,8 +5,8 @@ export default function (state = "", {type, payload}) {
   switch (type) {
   case FETCHED_RANDOM_BREED:
     return payload
-  case SET_BREED_NAME:
-    return state  
+  // case SET_BREED_NAME:
+  //   return state  
 
     // case ADD_PRODUCT:
   	//   return [...state, action.payload]
