@@ -10,9 +10,9 @@ class DashBoardPage extends PureComponent {
 
 
   componentDidMount() {
-    const {allusers, likes} = this.props
-    console.log(allusers, 'THISNAGOINGOIANGOINAOS')
-    matchUsers(allusers, likes)
+    const {allusers, allbreeds} = this.props
+    console.log(allusers,allbreeds, 'dashdashdashdsah')
+    matchUsers(allusers, allbreeds)
   }
 
 
@@ -26,9 +26,9 @@ class DashBoardPage extends PureComponent {
   }
 }
 
-const mapStateToProps = ({likes, allusers}) => ({
+const mapStateToProps = ({allbreeds, allusers}) => ({
   allusers,
-  likes
+  allbreeds
 })
 
 export default connect(mapStateToProps, { })(DashBoardPage)
