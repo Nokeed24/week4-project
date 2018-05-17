@@ -32,6 +32,6 @@
 }
 
 .like__match:hover {
-    transform: rotate(360deg);
-    transition: all 0.8s ease-in-out 0.4s;
+    transform: rotate(40deg);
+    transition: all 0.3s ease-in-out;
 }
