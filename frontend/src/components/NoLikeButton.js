@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { fetchRandom } from '../actions/breeds'
-import './NoLikeButton.css'
-
 
 export class NoLikeButton extends PureComponent {
   static propTypes = {
