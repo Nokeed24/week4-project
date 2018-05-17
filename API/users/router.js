@@ -38,7 +38,8 @@ router.post('/login', (req, res) => {
     if (bcrypt.compareSync(req.body.password, entity.password)) {
       res.send({
         jwt: sign(entity.id),
-        id: entity.id
+        id: entity.id,
+        isAdmin: entity.isadmin       
       })
     }
     else {

@@ -1,17 +1,28 @@
 .like-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.like__yes, .like__no {
+    padding: 0;
+    border: none;
+    background: none;
+    transition: transform 200ms ease-in;
+    margin-bottom: 2rem;
 }
 
 .like__yes {
     color: green;
-    padding: 0;
-    border: none;
-    background: none;
-    margin-right: 60px;
-    margin-bottom: 30px;
 }
 
-.like__yes:focus {
+.like__no {
+    color: red;
+}
+
+.like__yes:focus, .like__no:focus {
     outline: none;
+}
+
+.like__yes:hover, .like__no:hover {
+    transform: scale(1.2);
 }
