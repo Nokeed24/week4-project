@@ -4,7 +4,7 @@ import {login} from '../actions/users'
 import LoginForm from './LoginForm'
 import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
-import './LoginPage.css'
+import '../styles/LoginPage.css'
 
 
 class LoginPage extends PureComponent {

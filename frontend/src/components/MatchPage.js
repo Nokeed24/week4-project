@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
 
 import {matchUsers} from '../lib/functions'
-// import './MatchPage.css'
 
 
 class MatchPage extends PureComponent {

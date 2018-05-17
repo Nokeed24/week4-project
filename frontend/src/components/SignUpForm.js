@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import './SignUpForm.css'
+import '../styles/SignUpForm.css'
 
 
 export default class SignUpForm extends PureComponent {
