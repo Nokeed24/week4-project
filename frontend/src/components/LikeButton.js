@@ -22,8 +22,8 @@ export class LikeButton extends PureComponent {
 
   componentDidUpdate(prevProps){
     const {breed, fetchLikesForId, currentUser, likes, updateLike} = this.props
-    console.log(prevProps, 'previous');
-    console.log(this.props, 'new props');
+    // console.log(prevProps, 'previous');
+    // console.log(this.props, 'new props');
     if (prevProps.breed !== breed && likes!==null) {
       fetchLikesForId(currentUser.id)
       const amountOfLikes = {

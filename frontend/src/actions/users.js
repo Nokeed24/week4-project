@@ -34,12 +34,12 @@ export const login = (email, password) => (dispatch) => {
 }
 
 export const signup = (email, password) => (dispatch) => {
-  console.log(email, 'EMAIL')
+  // console.log(email, 'EMAIL')
   	request
   		.post(`${baseUrl}/users`)
   		.send({ email, password })
   		.then(result => {
-      console.log('SENT')
+      // console.log('SENT')
   			dispatch({
   				type: USER_SIGNUP_SUCCESS
   			})
@@ -86,7 +86,7 @@ export const updateLike = (updates) => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt
   const userId = state.currentUser.id
-  console.log(updates, 'UPDATES~FNSDJKGB')
+  // console.log(updates, 'UPDATES~FNSDJKGB')
   request
     .put(`${baseUrl}/users/${userId}`)
     .set('Authorization', `Bearer ${jwt}`)
