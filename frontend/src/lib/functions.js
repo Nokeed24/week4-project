@@ -19,11 +19,12 @@ const removeSubBreed = (breedName) => {
 
 }
 
-export const matchUsers = (allUsers, currentUser) => {
-  console.log('All users in functions', allUsers, currentUser)
-  const likesMatches = allUsers.filter(users =>
+export const matchUsers = (allusers, currentUser, likes, allbreeds) => {
+  console.log('All users in functions', allusers, currentUser)
+  const likesMatches = allusers.filter(users =>
     users.likes === currentUser.likes)
-    console.log(likesMatches, 'Matches by likes')
-  // const breedMatches = likesMatches.filter(users =>
-  //   users.breed === users[currentUser].breed)
+  console.log(likesMatches, 'Matches by likes')
+  // const breedsOfMatch = allbreeds.filter(likes =>
+  //   likes.id === likesMatches.breed)
+  // console.log(breedMatches, 'Matches by breed')
 }

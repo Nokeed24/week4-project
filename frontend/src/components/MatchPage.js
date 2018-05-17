@@ -10,9 +10,9 @@ class MatchPage extends PureComponent {
 
 
   componentDidMount() {
-    const {allusers, currentUser, likes} = this.props
+    const {allusers, currentUser, likes, allbreeds} = this.props
     console.log(allusers, 'THISNAGOINGOIANGOINAOS')
-    matchUsers(allusers, currentUser, likes)
+    matchUsers(allusers, currentUser, likes, allbreeds)
   }
 
 
@@ -30,7 +30,8 @@ const mapStateToProps = function (state) {
   return {
     allusers: state.allusers,
     currentUser: state.currentUser,
-    likes: state.likes
+    likes: state.likes,
+    allbreeds: state.allbreeds
   }
 }
 

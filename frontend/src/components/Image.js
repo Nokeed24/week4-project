@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
-import { fetchLikesForId, updateLike } from '../actions/users'
+import { fetchLikesForId, updateLike, fetchAllLikes } from '../actions/users'
 import {fetchAllUsers} from '../actions/users1'
 import './Image.css'
 
@@ -11,11 +11,13 @@ class Image extends PureComponent {
   componentDidMount() {
     const {fetchAllUsers} = this.props
     fetchAllUsers()
+
   }
   componentWillMount(props) {
-    const {currentUser, fetchRandom, fetchLikesForId, updateLike, likes} = this.props
+    const {currentUser, fetchRandom, fetchLikesForId, updateLike, likes, fetchAllLikes} = this.props
     fetchRandom()
     fetchLikesForId(currentUser.id)
+    fetchAllLikes()
     if(likes !== null)
     {
       console.log("I WANT TO SEE THIS")
@@ -46,4 +48,4 @@ const mapStateToProps = ({breed, url, currentUser, likes, like, updateLike}) => 
 })
 
 
-export default connect(mapStateToProps, {fetchRandom, fetchLikesForId, updateLike, fetchAllUsers})(Image)
+export default connect(mapStateToProps, {fetchRandom, fetchLikesForId, updateLike, fetchAllUsers, fetchAllLikes})(Image)

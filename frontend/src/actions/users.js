@@ -9,6 +9,7 @@ export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED'
 export const FETCH_LIKES_BY_ID = 'FETCH_LIKES_BY_ID'
 export const ADD_LIKE = 'ADD_LIKE'
 export const UPDATE_USER_LIKES = 'UPDATE_USER_LIKES'
+export const FETCH_ALL_LIKES = 'FETCH_ALL_LIKES'
 
 export const login = (email, password) => (dispatch) => {
   request
@@ -95,4 +96,16 @@ export const updateLike = (updates) => (dispatch, getState) => {
       type: UPDATE_USER_LIKES,
       payload: response.body
     }))
+}
+
+export const fetchAllLikes = () => (dispatch) => {
+  request
+    .get(`${baseUrl}/likes`)
+    .then(response => {
+      console.log(response, 'RESPONSESES')
+      dispatch({
+      type: FETCH_ALL_LIKES,
+      payload: response.body.likes
+    })})
+    .catch(err => alert(err))
 }
