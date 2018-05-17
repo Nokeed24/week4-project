@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import { fetchRandom } from '../actions/breeds'
 import { fetchLikesForId, postLike, updateLike } from '../actions/users'
-import './LikeButton.css'
+import '../styles/LikeButton.css'
 
 
 export class LikeButton extends PureComponent {

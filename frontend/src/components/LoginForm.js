@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import './LoginForm.css'
+import '../styles/LoginForm.css'
 
 
 export default class LoginForm extends PureComponent {

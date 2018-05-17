@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
 import { fetchLikesForId, updateLike } from '../actions/users'
 import {fetchAllUsers} from '../actions/users1'
-import './Image.css'
+import '../styles/Image.css'
 
 // import PropTypes from 'prop-types'
 
@@ -27,8 +27,8 @@ class Image extends PureComponent {
   render() {
     const {breed, url} = this.props
     return (
-      <div>
-        <h1 className="title"> The Dog Tinder!</h1>
+      <div className='container-image'>
+        <h1 className="title"> Choose Wisely!</h1>
         <img className='image' src={url} alt='Dogs'/>
         <p className='breed'>{breed.charAt(0).toUpperCase() + breed.slice(1)}</p>
       </div>

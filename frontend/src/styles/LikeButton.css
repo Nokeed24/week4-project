@@ -3,7 +3,7 @@
   justify-content: space-around;
 }
 
-.like__yes, .like__no {
+.like__yes, .like__no, .like__match {
     padding: 0;
     border: none;
     background: none;
@@ -12,17 +12,26 @@
 }
 
 .like__yes {
-    color: green;
+    color: #08a81b;
 }
 
 .like__no {
-    color: red;
+    color: #d10606;
 }
 
-.like__yes:focus, .like__no:focus {
+.like__match {
+   color: #e88b12;
+}
+
+.like__yes:focus, .like__no:focus, .like__match:focus {
     outline: none;
 }
 
 .like__yes:hover, .like__no:hover {
     transform: scale(1.2);
+}
+
+.like__match:hover {
+    transform: rotate(360deg);
+    transition: all 0.8s ease-in-out 0.4s;
 }
