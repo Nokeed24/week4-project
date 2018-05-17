@@ -55,8 +55,7 @@ router.post('/login', (req, res) => {
       res.send({
         jwt: sign(entity.id),
         id: entity.id,
-        isAdmin: entity.isadmin       
-        id: entity.id,
+        isAdmin: entity.isadmin,
         likes: entity.likes
       })
     }
