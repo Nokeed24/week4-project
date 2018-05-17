@@ -13,7 +13,7 @@ export class LikeButton extends PureComponent {
     const newLike = {id: currentUser.id, breed: breed }
     postLike(newLike)
     fetchLikesForId(currentUser.id)
-    console.log("Number of likes", likes.length )
+    // console.log("Number of likes", likes.length )
 
     const amountOfLikes = {
       likes: likes.length
@@ -28,7 +28,7 @@ export class LikeButton extends PureComponent {
   render() {
     return (
       <button className="like like__yes" onClick={this.onClick}>
-        <i class="fas fa-check-circle fa-5x"></i>
+        <i className="fas fa-check-circle fa-5x"></i>
       </button>
     )
   }
