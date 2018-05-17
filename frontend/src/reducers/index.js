@@ -6,6 +6,9 @@ import signup from './signUp'
 import url from './url'
 import likes from './likes'
 import like from './like'
+import allusers from './allusers'
+import allbreeds from './allbreeds'
+
 
 export default {
   breed,
@@ -14,5 +17,7 @@ export default {
   like,
   likes,
   currentUser,
-  signup
+  signup,
+  allusers,
+  allbreeds,
 }

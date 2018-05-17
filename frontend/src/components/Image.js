@@ -1,24 +1,36 @@
 import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
 import {fetchRandom} from '../actions/breeds'
-import { fetchLikesForId } from '../actions/users'
-import './Image.css'
+import { fetchLikesForId, updateLike, fetchAllLikes } from '../actions/users'
+import {fetchAllUsers} from '../actions/users1'
+import '../styles/Image.css'
 
 // import PropTypes from 'prop-types'
 
 class Image extends PureComponent {
+  componentDidMount() {
+    const {fetchAllUsers} = this.props
+    fetchAllUsers()
 
+  }
   componentWillMount(props) {
-    const {currentUser, fetchLikesForId} = this.props
-    this.props.fetchRandom()
-    this.props.fetchLikesForId(currentUser.id)
+    const {currentUser, fetchRandom, fetchLikesForId, updateLike, likes, fetchAllLikes} = this.props
+    fetchRandom()
+    fetchLikesForId(currentUser.id)
+    fetchAllLikes()
+    if(likes !== null)
+    {
+      console.log("I WANT TO SEE THIS")
+      const amountOfLikes = {likes: likes.length}
+      updateLike(amountOfLikes)
+    }
   }
 
   render() {
     const {breed, url} = this.props
     return (
-      <div>
-        <h1 className="title"> The Dog Tinder!</h1>
+      <div className='container-image'>
+        <h1 className="title"> Choose Wisely!</h1>
         <img className='image' src={url} alt='Dogs'/>
         <p className='breed'>{breed.charAt(0).toUpperCase() + breed.slice(1)}</p>
       </div>
@@ -26,7 +38,7 @@ class Image extends PureComponent {
   }
 }
 
-const mapStateToProps = ({breed, url, currentUser, likes, like}) => ({
+const mapStateToProps = ({breed, url, currentUser, likes, like, updateLike}) => ({
   breed,
   url,
   currentUser,
@@ -35,4 +47,5 @@ const mapStateToProps = ({breed, url, currentUser, likes, like}) => ({
 
 })
 
-export default connect(mapStateToProps, {fetchRandom, fetchLikesForId})(Image)
+
+export default connect(mapStateToProps, {fetchRandom, fetchLikesForId, updateLike, fetchAllUsers, fetchAllLikes})(Image)

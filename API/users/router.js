@@ -28,6 +28,22 @@ router.post('/users', (req, res) => {
   })
 })
 
+router.get('/users', (req, res) => {
+	User.findAll({
+	  attributes: ['id', 'email', 'likes']
+	})
+	  .then(result => {
+	    // do something with result
+	    res.send({
+	    	users: result
+	    })
+	  })
+	  .catch(err => {
+	    // there was an error, return some HTTP error code
+	    res.status(500).send({error: 'Something went wrong with Postgres'})
+	  })
+})
+
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
@@ -38,7 +54,9 @@ router.post('/login', (req, res) => {
     if (bcrypt.compareSync(req.body.password, entity.password)) {
       res.send({
         jwt: sign(entity.id),
-        id: entity.id
+        id: entity.id,
+        isAdmin: entity.isadmin,
+        likes: entity.likes
       })
     }
     else {

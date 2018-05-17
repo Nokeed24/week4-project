@@ -15,6 +15,11 @@ const User = sequelize.define(
         likes: {
             type: Sequelize.INTEGER,
             allowNull: true
+        },
+        isadmin: {
+          type: Sequelize.BOOLEAN,
+          allowNull: true,
+          defaultValue: false
         }
     },
     {

@@ -15,14 +15,11 @@ router.get('/likes', (req, res) => {
         attributes: ['id', 'breed']
     })
       .then(result => {
-        // do something with result
-
         res.send({
             likes: result
         })
       })
       .catch(err => {
-        // there was an error, return some HTTP error code
         res.status(500).send({error: 'Something went wrong with Postgres'})
       })
 })

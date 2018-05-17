@@ -12,9 +12,3 @@ export const fetchRandom = () => (dispatch) => {
       payload: response.body.message
     }))
 }
-
-
-
-
-
-
