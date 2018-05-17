@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import Matches from '../components/Matches'
 import Image from '../components/Image'
 import {Redirect} from 'react-router-dom'
+import DashBoard from '../components/DashBoard'
 import './Board.css'
 
 
@@ -24,7 +25,9 @@ class Board extends PureComponent {
           </div>
           <div className='match-buttons'>
             <Matches />
+            <DashBoard />
           </div>
+
         </div>}
         { !currentUser && <Redirect to="/login" />}
       </div>
