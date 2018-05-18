@@ -15,6 +15,7 @@ class Board extends PureComponent {
   render() {
 
     const {currentUser} = this.props
+    console.log(currentUser, 'THISISWHATIAMLOOKINGFOR')
     return (
       <div className='Board'>
         { currentUser &&
@@ -26,14 +27,14 @@ class Board extends PureComponent {
           </div>
           <div className='match-buttons'>
             <Matches />
-            {currentUser.isAdmin ? <DashBoard /> : null }
+            {currentUser.isAdmin && <DashBoard />}
           </div>
-          <div className='logout-button'>
+          {currentUser && <div className='logout-button'>
             <LogoutButton />
-          </div>
+          </div>}
 
         </div>}
-        { !currentUser && <Redirect to="/login" />}
+        {!currentUser && <Redirect to="/login" />}
       </div>
     )
   }

@@ -1,20 +1,9 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
-
-import {matchUsers} from '../lib/functions'
 // import './MatchPage.css'
 
-
 class DashBoardPage extends PureComponent {
-
-
-  componentDidMount() {
-    const {allusers, allbreeds} = this.props
-    console.log(allusers,allbreeds, 'dashdashdashdsah')
-    matchUsers(allusers, allbreeds)
-  }
-
 
   render() {
     const {allusers, allbreeds} = this.props
@@ -25,7 +14,7 @@ class DashBoardPage extends PureComponent {
       <div>
         <h1>All the Users of your app!</h1>
 
-        
+
         <div className="totalusers">
           <span className="usersTotal">Dog lovers: {numberOfUsers}</span>
         </div>
@@ -36,7 +25,7 @@ class DashBoardPage extends PureComponent {
 	      <Link to='/main'>BACK</Link>
 	      </div>
       </div>
-	    
+
 	  )
   }
 }
