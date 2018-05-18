@@ -19,29 +19,19 @@ class DashBoardPage extends PureComponent {
   render() {
     const {allusers, allbreeds} = this.props
     const numberOfUsers = allusers.length
+    const totalLikes = allbreeds.length
     console.log(this.props, 'PROPSPSSS')
 	  return (
       <div>
-        <h1>All Users of you app!</h1>
+        <h1>All the Users of your app!</h1>
 
-        <table>
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>email</th>
-              <th>Likes</th>
-            </tr>
-          </thead>
-          <tbody>
-            { allusers.map(user => (
-              <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.email}</td>
-              <td>{user.likes}</td>
-              </tr>)) }
-          </tbody>
-				</table>
-        <span className="usersTotal">Number of users: {numberOfUsers}</span>
+        
+        <div className="totalusers">
+          <span className="usersTotal">Dog lovers: {numberOfUsers}</span>
+        </div>
+        <div className="totallikes">
+          <span className="likesTotal">Doggos liked: {totalLikes}</span>
+        </div>
         <div className='matches-div'>
 	      <Link to='/main'>BACK</Link>
 	      </div>

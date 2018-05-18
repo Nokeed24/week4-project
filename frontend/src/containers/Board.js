@@ -6,6 +6,7 @@ import Matches from '../components/Matches'
 import Image from '../components/Image'
 import {Redirect} from 'react-router-dom'
 import DashBoard from '../components/DashBoard'
+import LogoutButton from '../components/LogoutButton'
 import './Board.css'
 
 
@@ -26,6 +27,9 @@ class Board extends PureComponent {
           <div className='match-buttons'>
             <Matches />
             {currentUser.isAdmin ? <DashBoard /> : null }
+          </div>
+          <div className='logout-button'>
+            <LogoutButton />
           </div>
 
         </div>}
