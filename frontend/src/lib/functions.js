@@ -35,7 +35,7 @@ const removeDuplicates = (arr, key) => {
         });
     }
 }
-//THIS WILL TAKE TWO LISTS OF USER LIKES AND RETURN THE COMMON ONES
+
 const returnCommonLikes = (userLikes, myLikes) => {
     var common = []
     userLikes.forEach(like => {

@@ -23,9 +23,9 @@ class DashBoardPage extends PureComponent {
         </div>
         <div className='matches-div'>
 	      <Link to='/main'>
-          <button className="like go-back" onClick={this.props.onClick}>
-            <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
-          </button>
+            <button className="like go-back" onClick={this.props.onClick}>
+              <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
+            </button>
         </Link>
 	      </div>
       </div>

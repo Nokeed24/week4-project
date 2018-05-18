@@ -7,12 +7,7 @@ export default function (state = "", action) {
   switch (action.type) {
     case FETCHED_RANDOM_BREED:
       const breedName = getBreedName(action.payload)
-      return breedName
-   // case UPDATE_PRODUCT:
-	 //   if (action.payload.id === state.id) {
-	 //     return action.payload
-	 //   }
-	 //   else return state
+    return breedName
 
   default:
     return state

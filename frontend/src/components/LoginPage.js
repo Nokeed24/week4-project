@@ -14,7 +14,6 @@ class LoginPage extends PureComponent {
 
   render() {
     const { loginError } = this.props
-    console.log(loginError, 'ERROR')
     const errorColor = {
       color: 'red'
     }

@@ -3,13 +3,6 @@ const Like = require('./model')
 
 const router = new Router()
 
-// const requireUser = (req, res, next) => {
-//     if (req.user) next()
-//     else res.status(401).send({
-//         message: 'Please login'
-//     })
-// }
-
 router.get('/likes', (req, res) => {
     Like.findAll({
         attributes: ['id', 'breed']
@@ -44,7 +37,6 @@ router.get('/likes/:id', (req, res) => {
 	  })
 })
 
-//router.post('/likes', requireUser, (req, res) => {
 router.post('/likes', (req, res) => {
   const like = req.body
 

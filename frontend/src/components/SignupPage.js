@@ -12,7 +12,6 @@ class SignupPage extends PureComponent {
 	}
 
 	render() {
-	  console.log(this.props)
 	  if (this.props.signup.success) return (
 	    <Redirect to="/" />
 	  )

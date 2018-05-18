@@ -78,7 +78,6 @@ router.put('/users/:id', (req, res) => {
   const updates = req.body
   User.findById(req.params.id)
     .then(entity => {
-      // change the product and store in DB
       entity.update(updates)
     })
     .then(final => {
