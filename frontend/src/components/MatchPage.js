@@ -28,7 +28,6 @@ class MatchPage extends PureComponent {
 	  return (
 	    <div className='matches-div'>
         <h1>{`Your top dogs`}</h1>
-	      <Link to='/main'>BACK</Link>
         <table>
           <thead>
             <tr>
@@ -43,6 +42,11 @@ class MatchPage extends PureComponent {
             </tr>)) }
           </tbody>
 			  </table>
+        <Link to='/main'>
+          <button className="go-back" onClick={this.props.onClick}>
+            <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
+          </button>
+        </Link>
 	    </div>
 
 
