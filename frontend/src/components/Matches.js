@@ -9,7 +9,7 @@ export default class Matches extends PureComponent {
     return (
       <Link to='/matches'>
         <button className="like like__match" onClick={this.props.onClick}>
-          <i className="fas fa-paw fa-5x"></i>
+          <i className="fas fa-paw fa-4x"></i>
         </button>
       </Link>
     )

@@ -7,13 +7,15 @@ export default class logoutButton extends PureComponent {
 
     }
 
-  render() {
-    return (
-      <Link to='/login'>
-        <button className="logoutButton" onClick={this.onClick}>
-        <i class="fas fa-sign-out-alt"></i>
-        </button>
-      </Link>
-    )
-  }
+    render() {
+      return (
+        <div className='log-out'>
+          <Link to='/login'>
+            <button className="logoutButton" onClick={this.onClick}>
+              <i class="fas fa-sign-out-alt fa-2x"></i>
+            </button>
+          </Link>
+        </div>
+      )
+    }
 }
