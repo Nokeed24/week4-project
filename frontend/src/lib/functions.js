@@ -19,18 +19,53 @@ const removeSubBreed = (breedName) => {
 
 }
 
-export const matchUsers = (allusers, currentUser, likes, allbreeds) => {
-  console.log('All users in functions', allusers, currentUser)
-  console.log('All breeds in functions', allbreeds)
-  const likesMatches = allusers.filter(users =>
-    users.likes === currentUser.likes)
-  console.log(likesMatches, 'Matches by likes')
-  // const breedsOfMatch = allbreeds.filter(breed => {
-  //   console.log(allbreeds.indexOf(breed))
-  //   if(allbreeds.indexOf(breed) < likesMatches.length)
-  //   {return breed.id === likesMatches[allbreeds.indexOf(breed)].id}})
-  //   console.log(breedsOfMatch, 'Matches by breed')
-  // const commonLikes = likes.filter(breed =>
-  //   breed.breed === breedsOfMatch[likes.indexOf(breed)].breed)
-  //   console.log(commonLikes, 'COMMON likes')
+const removeDuplicates = (arr, key) => {
+    if (!(arr instanceof Array) || key && typeof key !== 'string') {
+        return false;
+    }
+
+    if (key && typeof key === 'string') {
+        return arr.filter((obj, index, arr) => {
+            return arr.map(mapObj => mapObj[key]).indexOf(obj[key]) === index;
+        });
+
+    } else {
+        return arr.filter(function(item, index, arr) {
+            return arr.indexOf(item) == index;
+        });
+    }
+}
+//THIS WILL TAKE TWO LISTS OF USER LIKES AND RETURN THE COMMON ONES
+const returnCommonLikes = (userLikes, myLikes) => {
+    var common = []
+    userLikes.forEach(like => {
+        myLikes.forEach(myLike => {
+            if(like.breed === myLike.breed)
+            {
+                common.push(like.breed)
+            }
+        })
+    })
+    return removeDuplicates(common).length
+}
+
+export const finalFilter = (arrayofobjects, likes) => {
+    const commonLikes = []
+    let i = 0;
+    arrayofobjects.forEach(array => {
+        i++
+        if (array[i].id !== likes[0].id)
+        {
+            commonLikes.push({id: array[i].id, likes: returnCommonLikes(array,likes)})
+        }
+    })
+    return commonLikes
+}
+
+export const likesOfUsersThatMatch = (allusers, currentUser, likes, allbreeds) => {
+    let userMatches = [];
+    allusers.map(user => user.likes === currentUser.likes ? userMatches.push(user) : null)
+    const matchingUsers =
+    userMatches.map(match => allbreeds.filter(y => y.id === match.id))
+    return matchingUsers
 }

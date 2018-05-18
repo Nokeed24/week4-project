@@ -6,6 +6,7 @@ import Matches from '../components/Matches'
 import Image from '../components/Image'
 import {Redirect} from 'react-router-dom'
 import DashBoard from '../components/DashBoard'
+import LogoutButton from '../components/LogoutButton'
 import './Board.css'
 
 
@@ -14,6 +15,7 @@ class Board extends PureComponent {
   render() {
 
     const {currentUser} = this.props
+    console.log(currentUser, 'THISISWHATIAMLOOKINGFOR')
     return (
       <div className='Board'>
         { currentUser &&
@@ -25,11 +27,14 @@ class Board extends PureComponent {
           </div>
           <div className='match-buttons'>
             <Matches />
-            <DashBoard />
+            {currentUser.isAdmin && <DashBoard />}
           </div>
+          {currentUser && <div className='logout-button'>
+            <LogoutButton />
+          </div>}
 
         </div>}
-        { !currentUser && <Redirect to="/login" />}
+        {!currentUser && <Redirect to="/login" />}
       </div>
     )
   }

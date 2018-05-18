@@ -1,10 +1,10 @@
-h1 {
+.greeting {
     font-family: 'Amatic SC', cursive;
     font-size: 3em;
     margin-top: 0;
 }
 
-.signup-div, .dashboard {
+.login-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
