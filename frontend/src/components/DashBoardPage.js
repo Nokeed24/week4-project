@@ -11,23 +11,26 @@ class DashBoardPage extends PureComponent {
     const totalLikes = allbreeds.length
     console.log(this.props, 'PROPSPSSS')
 	  return (
-      <div>
-        <h1>All the Users of your app!</h1>
+      <div className='dashboard'>
 
+        <h1>All the Users of your app!</h1>
 
         <div className="totalusers">
           <span className="usersTotal">Dog lovers: {numberOfUsers}</span>
         </div>
+
         <div className="totallikes">
           <span className="likesTotal">Doggos liked: {totalLikes}</span>
         </div>
+
         <div className='matches-div'>
 	      <Link to='/main'>
             <button className="like go-back" onClick={this.props.onClick}>
               <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
             </button>
           </Link>
-	      </div>
+	     </div>
+
       </div>
 
 	  )
