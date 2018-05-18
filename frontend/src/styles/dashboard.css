@@ -1,0 +1,16 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.go-back {
+    margin: 30px;
+}
+
+.logout-button {
+    display: flex;
+    justify-content: center;
+}
