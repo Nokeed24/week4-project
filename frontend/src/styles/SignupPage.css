@@ -4,7 +4,11 @@ h1 {
     margin-top: 0;
 }
 
-.signup-div, .dashboard {
+span {
+    font-size: 1.2rem;
+}
+
+.signup-div, .dashboard, .matches-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
