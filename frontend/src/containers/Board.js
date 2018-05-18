@@ -25,7 +25,7 @@ class Board extends PureComponent {
           </div>
           <div className='match-buttons'>
             <Matches />
-            <DashBoard />
+            {currentUser.isAdmin ? <DashBoard /> : null }
           </div>
 
         </div>}
