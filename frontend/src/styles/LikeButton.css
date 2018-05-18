@@ -1,37 +1,37 @@
 .like-buttons {
-  display: flex;
-  justify-content: space-around;
+ display: flex;
+ justify-content: space-around;
 }
 
-.like__yes, .like__no, .like__match {
-    padding: 0;
-    border: none;
-    background: none;
-    transition: transform 200ms ease-in;
-    margin-bottom: 2rem;
+.like__yes, .like__no, .like__match, .go-back, .logoutButton {
+   padding: 0;
+   border: none;
+   background: none;
+   transition: transform 200ms ease-in;
+   margin-bottom: 1rem;
 }
 
-.like__yes {
-    color: #08a81b;
+.like__yes, .go-back {
+   color: #08a81b;
 }
 
 .like__no {
-    color: #d10606;
+   color: #d10606;
 }
 
-.like__match {
-   color: #e88b12;
+.like__match, .logoutButton {
+  color: #e88b12;
 }
 
-.like__yes:focus, .like__no:focus, .like__match:focus {
-    outline: none;
+.like__yes:focus, .like__no:focus, .like__match:focus, .go-back:focus, .logoutButton {
+   outline: none;
 }
 
-.like__yes:hover, .like__no:hover {
-    transform: scale(1.2);
+.like__yes:hover, .like__no:hover, .go-back:hover, .logoutButton {
+   transform: scale(1.2);
 }
 
 .like__match:hover {
-    transform: rotate(45deg);
-    transition: all 0.3s ease-in-out;
+   transform: rotate(45deg);
+   transition: all 0.3s ease-in-out;
 }

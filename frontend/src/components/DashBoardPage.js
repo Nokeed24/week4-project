@@ -22,7 +22,11 @@ class DashBoardPage extends PureComponent {
           <span className="likesTotal">Doggos liked: {totalLikes}</span>
         </div>
         <div className='matches-div'>
-	      <Link to='/main'>BACK</Link>
+	      <Link to='/main'>
+            <button className="like go-back" onClick={this.props.onClick}>
+              <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
+            </button>
+          </Link>
 	      </div>
       </div>
 
