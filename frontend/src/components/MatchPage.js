@@ -2,23 +2,44 @@ import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
 
-import {matchUsers} from '../lib/functions'
+import {likesOfUsersThatMatch, finalFilter} from '../lib/functions'
 
 
 class MatchPage extends PureComponent {
+  state = { match: null }
 
 
   componentDidMount() {
     const {allusers, currentUser, likes, allbreeds} = this.props
-    console.log(allusers, 'THISNAGOINGOIANGOINAOS')
-    matchUsers(allusers, currentUser, likes, allbreeds)
+    //console.log(allusers, 'THISNAGOINGOIANGOINAOS')
+    const common = likesOfUsersThatMatch(allusers, currentUser, likes, allbreeds)
+    const numberOfMatchingLikes = finalFilter(common, likes)
+    console.log(numberOfMatchingLikes[0])
+    console.log(allusers);
+    const match = allusers.find(user => user.id === numberOfMatchingLikes[0].id)
+    console.log(match);
+    this.setState({ match })
   }
 
 
+
+
   render() {
-    console.log(this.props, 'PROPSPSSS')
+    const printMatches = (amountOfLikes) => {
+      this.numberOfMatchingLikes.map(match => {
+          this.props.allusers.find(x => {
+            if (x.id === match.id) {
+              return x.email
+            }
+          })
+      })
+    }
+    if (!this.state.match) {
+        return (<h1>{'You ain\'t nothing but a hounddog'}</h1>)
+    }
 	  return (
 	    <div className='matches-div'>
+        <h1>{`Your top dog ${ this.state.match.email }`}</h1>
 	      <Link to='/main'>BACK</Link>
 	    </div>
 	  )
