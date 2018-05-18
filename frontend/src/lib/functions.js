@@ -46,20 +46,37 @@ const returnCommonLikes = (userLikes, myLikes) => {
             }
         })
     })
-    return common
+    return removeDuplicates(common).length
 }
 
-export const matchUsers = (allusers, currentUser, likes, allbreeds) => {
-  console.log(allusers, currentUser, likes, allbreeds, 'All parameters')
-  let userMatches = [];
-  allusers.map(user => user.likes === currentUser.likes ? userMatches.push(user) : null)
-  console.log('Users match by amount of likes', userMatches)
-  let random = []
-  allbreeds.map(x => random.push(x.breed))
-  const matchingUsers =
-    userMatches.map(match => allbreeds.filter(y => y.id === match.id))
-  console.log(matchingUsers, 'This is a variable with two arrays with users that have matched in amount of likes')
-  const common = returnCommonLikes(matchingUsers[0],removeDuplicates(matchingUsers[1])) 
-    
-  console.log(removeDuplicates(common), "common likes")
+export const finalFilter = (arrayofobjects, likes) => {
+    const commonLikes = []
+    let i = 0;
+    arrayofobjects.forEach(array => {
+        i++
+        if (array[i].id !== likes[0].id)
+        {
+            commonLikes.push(returnCommonLikes(array,likes))
+        }
+    })
+    return commonLikes
 }
+
+export const likesOfUsersThatMatch = (allusers, currentUser, likes, allbreeds) => {
+    let userMatches = [];
+    allusers.map(user => user.likes === currentUser.likes ? userMatches.push(user) : null)
+    const matchingUsers =
+    userMatches.map(match => allbreeds.filter(y => y.id === match.id))
+    return matchingUsers
+}
+
+//export const matchUsers = (allusers, currentUser, likes, allbreeds) => {
+  //console.log(allusers, currentUser, likes, allbreeds, 'All parameters')
+  
+  //console.log('Users match by amount of likes', userMatches)
+  
+  //console.log(matchingUsers, 'This is a variable with two arrays with users that have matched in amount of likes')
+  //const common = returnCommonLikes(matchingUsers[0],removeDuplicates(matchingUsers[1])) 
+    
+  //console.log(common, "common likes")
+//}
