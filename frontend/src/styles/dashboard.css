@@ -6,8 +6,8 @@
     width: 100%;
 }
 
-.go-back {
-    margin: 30px;
+button.go-back {
+    margin: 50px;
 }
 
 .logout-button {
