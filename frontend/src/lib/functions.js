@@ -56,7 +56,7 @@ export const finalFilter = (arrayofobjects, likes) => {
         i++
         if (array[i].id !== likes[0].id)
         {
-            commonLikes.push(returnCommonLikes(array,likes))
+            commonLikes.push({id: array[i].id, likes: returnCommonLikes(array,likes)})
         }
     })
     return commonLikes
