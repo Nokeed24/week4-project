@@ -15,7 +15,6 @@ class Board extends PureComponent {
   render() {
 
     const {currentUser} = this.props
-    console.log(currentUser, 'THISISWHATIAMLOOKINGFOR')
     return (
       <div className='Board'>
         { currentUser &&

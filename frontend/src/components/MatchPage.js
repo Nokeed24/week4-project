@@ -21,7 +21,6 @@ class MatchPage extends PureComponent {
 
 
   render() {
-    console.log(this.state, 'STATETAUINT')
     if (!this.state.match) {
       return (<h1>{'You ain\'t nothing but a hounddog'}</h1>)
     }

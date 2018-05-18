@@ -14,7 +14,6 @@ export class LikeButton extends PureComponent {
     postLike(newLike)
     if(likes !== null)
     {
-      console.log("I WANT TO SEE THIS")
       fetchLikesForId(currentUser.id)
       const amountOfLikes = {likes: likes.length + 1}
       updateLike(amountOfLikes)
