@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
-import '../styles/dashboard.css'
+// import './MatchPage.css'
 
 class DashBoardPage extends PureComponent {
 
@@ -11,26 +11,23 @@ class DashBoardPage extends PureComponent {
     const totalLikes = allbreeds.length
     console.log(this.props, 'PROPSPSSS')
 	  return (
-      <div className='dashboard'>
-
+      <div>
         <h1>All the Users of your app!</h1>
+
 
         <div className="totalusers">
           <span className="usersTotal">Dog lovers: {numberOfUsers}</span>
         </div>
-
         <div className="totallikes">
           <span className="likesTotal">Doggos liked: {totalLikes}</span>
         </div>
-
         <div className='matches-div'>
 	      <Link to='/main'>
-            <button className="like go-back" onClick={this.props.onClick}>
-              <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
-            </button>
-          </Link>
-	     </div>
-
+          <button className="like go-back" onClick={this.props.onClick}>
+            <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
+          </button>
+        </Link>
+	      </div>
       </div>
 
 	  )

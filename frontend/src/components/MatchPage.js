@@ -11,14 +11,9 @@ class MatchPage extends PureComponent {
 
   componentDidMount() {
     const {allusers, currentUser, likes, allbreeds} = this.props
-    //console.log(allusers, 'THISNAGOINGOIANGOINAOS')
     const common = likesOfUsersThatMatch(allusers, currentUser, likes, allbreeds)
     const numberOfMatchingLikes = finalFilter(common, likes)
-    console.log(numberOfMatchingLikes)
-    console.log(allusers);
     const match = numberOfMatchingLikes.map(x => allusers.find(user => user.id === x.id))
-    //allusers.find(user => user.id === numberOfMatchingLikes[0].id)
-    console.log(match);
     this.setState({ match })
   }
 
@@ -32,7 +27,7 @@ class MatchPage extends PureComponent {
     }
 	  return (
 	    <div className='matches-div'>
-        <h1>{`Your top dog ${ this.state.match.email }`}</h1>
+        <h1>{`Your top dogs`}</h1>
 	      <Link to='/main'>BACK</Link>
         <table>
           <thead>
@@ -47,7 +42,7 @@ class MatchPage extends PureComponent {
               <td>{user.likes}</td>
             </tr>)) }
           </tbody>
-				</table>
+			  </table>
 	    </div>
 
 
