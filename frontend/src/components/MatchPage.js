@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
-
 import {likesOfUsersThatMatch, finalFilter} from '../lib/functions'
+import '../styles/SignupPage.css'
+import '../styles/dashboard.css'
 
 
 class MatchPage extends PureComponent {
@@ -21,23 +22,24 @@ class MatchPage extends PureComponent {
 
 
   render() {
+    const {currentUser} = this.props
     if (!this.state.match) {
       return (<h1>{'You ain\'t nothing but a hounddog'}</h1>)
     }
 	  return (
 	    <div className='matches-div'>
-        <h1>{`Your top dogs`}</h1>
+        <h1 className='match-header'>{`Matching dawgs`}</h1>
         <table>
           <thead>
             <tr>
-              <th>email</th>
-              <th>likes in common</th>
+              <th className='table-item'>Email</th>
+              <th className='table-item'>Common likes</th>
             </tr>
           </thead>
           <tbody>
             { this.state.match.map(user => (<tr key={user.id}>
-              <td>{user.email}</td>
-              <td>{user.likes}</td>
+              <td className='table-item'>{user.email}</td>
+              <td className='table-item'>{user.likes}</td>
             </tr>)) }
           </tbody>
 			  </table>
@@ -46,6 +48,7 @@ class MatchPage extends PureComponent {
             <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
           </button>
         </Link>
+        {!currentUser && <Redirect to="/login" />}
 	    </div>
 
 
@@ -58,7 +61,7 @@ const mapStateToProps = function (state) {
     allusers: state.allusers,
     currentUser: state.currentUser,
     likes: state.likes,
-    allbreeds: state.allbreeds
+    allbreeds: state.allbreeds,
   }
 }
 

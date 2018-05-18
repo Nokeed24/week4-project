@@ -9,7 +9,6 @@ export const fetchAllUsers = () => (dispatch) => {
     .get(`${baseUrl}/users`)
 
     .then(response => {
-      console.log('GET IT?!')
       dispatch({
         type: FETCH_ALL_USERS,
         payload: response.body.users

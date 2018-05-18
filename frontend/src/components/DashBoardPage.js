@@ -1,17 +1,16 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
-import '../styles/dashboard.css'
+// import './MatchPage.css'
 
 class DashBoardPage extends PureComponent {
 
   render() {
-    const {allusers, allbreeds} = this.props
+    const {allusers, allbreeds, currentUser} = this.props
     const numberOfUsers = allusers.length
     const totalLikes = allbreeds.length
-    console.log(this.props, 'PROPSPSSS')
 	  return (
-      <div className='dashboard'>
+      <div>
         <h1>All the Users of your app!</h1>
 
 
@@ -26,7 +25,8 @@ class DashBoardPage extends PureComponent {
             <button className="like go-back" onClick={this.props.onClick}>
               <i className="fas fa-arrow-alt-circle-left fa-4x"></i>
             </button>
-          </Link>
+        </Link>
+        {!currentUser && <Redirect to="/login" />}
 	      </div>
       </div>
 
@@ -34,9 +34,10 @@ class DashBoardPage extends PureComponent {
   }
 }
 
-const mapStateToProps = ({allbreeds, allusers}) => ({
+const mapStateToProps = ({allbreeds, allusers, currentUser}) => ({
   allusers,
-  allbreeds
+  allbreeds,
+  currentUser
 })
 
 export default connect(mapStateToProps, { })(DashBoardPage)

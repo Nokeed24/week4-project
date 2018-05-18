@@ -87,7 +87,6 @@ export const updateLike = (updates) => (dispatch, getState) => {
   const state = getState()
   const jwt = state.currentUser.jwt
   const userId = state.currentUser.id
-  // console.log(updates, 'UPDATES~FNSDJKGB')
   request
     .put(`${baseUrl}/users/${userId}`)
     .set('Authorization', `Bearer ${jwt}`)
@@ -102,7 +101,6 @@ export const fetchAllLikes = () => (dispatch) => {
   request
     .get(`${baseUrl}/likes`)
     .then(response => {
-      console.log(response, 'RESPONSESES')
       dispatch({
       type: FETCH_ALL_LIKES,
       payload: response.body.likes
