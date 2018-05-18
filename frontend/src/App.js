@@ -6,6 +6,7 @@ import LoginPage from './components/LoginPage'
 import SignupPage from './components/SignupPage'
 import MatchPage from './components/MatchPage'
 import DashBoardPage from './components/DashBoardPage'
+import LogoutButton from './components/LogoutButton'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path='/signup' component={SignupPage} />
           <Route exact path='/matches' component={MatchPage} />
           <Route exact path='/DashBoard' component={DashBoardPage} />
+          <Route exact path='/login' component={LogoutButton} />
         </div>
       </Router>
     )
