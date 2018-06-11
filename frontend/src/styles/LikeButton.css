@@ -1,4 +1,4 @@
-.like-buttons {
+/* .like-buttons {
  display: flex;
  justify-content: space-around;
 }
@@ -34,4 +34,4 @@
 .like__match:hover {
    transform: rotate(45deg);
    transition: all 0.3s ease-in-out;
-}
+} */

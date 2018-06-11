@@ -1,17 +1,17 @@
-import * as request from 'superagent'
+// import * as request from 'superagent'
 
-const baseUrl = 'http://localhost:4001'
+// const baseUrl = 'http://localhost:4001'
 
-export const FETCH_ALL_USERS = 'FETCH_ALL_USERS'
+// export const FETCH_ALL_USERS = 'FETCH_ALL_USERS'
 
-export const fetchAllUsers = () => (dispatch) => {
-  request
-    .get(`${baseUrl}/users`)
+// export const fetchAllUsers = () => (dispatch) => {
+//   request
+//     .get(`${baseUrl}/users`)
 
-    .then(response => {
-      dispatch({
-        type: FETCH_ALL_USERS,
-        payload: response.body.users
-      })})
-    .catch(err => alert(err))
-}
+//     .then(response => {
+//       dispatch({
+//         type: FETCH_ALL_USERS,
+//         payload: response.body.users
+//       })})
+//     .catch(err => alert(err))
+// }

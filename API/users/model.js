@@ -12,10 +12,10 @@ const User = sequelize.define(
             type: Sequelize.STRING,
             allowNull: false
         },
-        likes: {
-            type: Sequelize.INTEGER,
-            allowNull: true
-        },
+        // likes: {
+        //     type: Sequelize.INTEGER,
+        //     allowNull: true
+        // },
         // isadmin: {
         //   type: Sequelize.BOOLEAN,
         //   allowNull: true,

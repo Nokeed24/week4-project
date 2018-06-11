@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { Client } = require('pg')
-const likesRouter = require('./likes/router')
+// const likesRouter = require('./likes/router')
 const usersRouter = require('./users/router')
 const User = require('./users/model')
 const verify = require('./jwt').verify
@@ -18,41 +18,40 @@ app.use(function(req, res, next) {
     next()
 })
 
-app.use(function (req, res, next) {
-  if (!req.headers.authorization) return next()
+// app.use(function (req, res) {
+//   if (!req.headers.authorization) return next()
 
-  const auth = req.headers.authorization.split(' ')
-  console.log('AUTH', auth)
-  if (auth[0] === 'Bearer') {
-    verify(auth[1], function (err, jwt) {
-      console.log('ERROR', jwt, err)
-      if (err) {
-        console.error(err)
-        res.status(400).send({
-          message: "JWT token invalid"
-        })
-      }
-      else {
-        User
-          .findById(jwt.id)
-          .then(entity => {
-            req.user = entity
-            next()
-          })
-          .catch(err => {
-            console.error(err)
-            res.status(500).send({
-              message: 'Something went horribly wrong'
-            })
-          })
-      }
-    })
-  }
-  else next()
-})
+//   const auth = req.headers.authorization.split(' ')
+//   if (auth[0] === 'Bearer') {
+//     verify(auth[1], function (err, jwt) {
+//       console.log('ERROR', jwt, err)
+//       if (err) {
+//         console.error(err)
+//         res.status(400).send({
+//           message: "JWT token invalid"
+//         })
+//       }
+//       else {
+//         User
+//           .findById(jwt.id)
+//           .then(entity => {
+//             req.user = entity
+//             next()
+//           })
+//           .catch(err => {
+//             console.error(err)
+//             res.status(500).send({
+//               message: 'Something went horribly wrong'
+//             })
+//           })
+//       }
+//     })
+//   }
+//   else next()
+// })
 
-app.use(usersRouter)
-app.use(likesRouter)
+// app.use(usersRouter)
+// app.use(likesRouter)
 
 const connectionString = 'postgresql://postgres:password@localhost:5432/postgres'
 const client = new Client({ connectionString })
