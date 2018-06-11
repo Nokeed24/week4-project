@@ -17,8 +17,8 @@ router.post('/users', (req, res) => {
   .then(entity => {
     res.send({
       id: entity.id,
-      email: entity.email,
-      likes: entity.likes
+      email: entity.email
+      // likes: entity.likes
     })
   })
   .catch(err => {
@@ -55,8 +55,8 @@ router.post('/login', (req, res) => {
       res.send({
         jwt: sign(entity.id),
         id: entity.id,
-        isAdmin: entity.isadmin,
-        likes: entity.likes
+        // isAdmin: entity.isadmin,
+        // likes: entity.likes
       })
     }
     else {

@@ -16,11 +16,11 @@ const User = sequelize.define(
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        isadmin: {
-          type: Sequelize.BOOLEAN,
-          allowNull: true,
-          defaultValue: false
-        }
+        // isadmin: {
+        //   type: Sequelize.BOOLEAN,
+        //   allowNull: true,
+        //   defaultValue: false
+        // }
     },
     {
         tableName: "users",

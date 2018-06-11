@@ -21,3 +21,8 @@ const Like = sequelize.define(
 )
 
 module.exports = Like
+
+// CREATE TABLE likes (
+//     id SERIAL,
+//     breed TEXT,
+//   );
