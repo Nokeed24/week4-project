@@ -8,9 +8,8 @@ const router = new Router()
 router.post('/users', (req, res) => {
   const user = {
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 10),
-    likes: 0
-  }
+    password: bcrypt.hashSync(req.body.password, 10)
+    }
 
   User
   .create(user)
@@ -18,7 +17,6 @@ router.post('/users', (req, res) => {
     res.send({
       id: entity.id,
       email: entity.email
-      // likes: entity.likes
     })
   })
   .catch(err => {
@@ -30,16 +28,14 @@ router.post('/users', (req, res) => {
 
 router.get('/users', (req, res) => {
 	User.findAll({
-	  attributes: ['id', 'email', 'likes']
+	  attributes: ['id', 'email']
 	})
 	  .then(result => {
-	    // do something with result
 	    res.send({
 	    	users: result
 	    })
 	  })
 	  .catch(err => {
-	    // there was an error, return some HTTP error code
 	    res.status(500).send({error: 'Something went wrong with Postgres'})
 	  })
 })
@@ -55,8 +51,6 @@ router.post('/login', (req, res) => {
       res.send({
         jwt: sign(entity.id),
         id: entity.id,
-        // isAdmin: entity.isadmin,
-        // likes: entity.likes
       })
     }
     else {

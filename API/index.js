@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { Client } = require('pg')
-const likesRouter = require('./likes/router')
 const usersRouter = require('./users/router')
 const User = require('./users/model')
 const verify = require('./jwt').verify
@@ -22,10 +21,8 @@ app.use(function (req, res, next) {
   if (!req.headers.authorization) return next()
 
   const auth = req.headers.authorization.split(' ')
-  console.log('AUTH', auth)
   if (auth[0] === 'Bearer') {
     verify(auth[1], function (err, jwt) {
-      console.log('ERROR', jwt, err)
       if (err) {
         console.error(err)
         res.status(400).send({
@@ -34,7 +31,7 @@ app.use(function (req, res, next) {
       }
       else {
         User
-          .findById(jwt.id)
+          .findById(jwt.data.id)
           .then(entity => {
             req.user = entity
             next()
@@ -51,8 +48,8 @@ app.use(function (req, res, next) {
   else next()
 })
 
+
 app.use(usersRouter)
-app.use(likesRouter)
 
 const connectionString = 'postgresql://postgres:password@localhost:5432/postgres'
 const client = new Client({ connectionString })

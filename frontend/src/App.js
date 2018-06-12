@@ -4,8 +4,6 @@ import Board from './containers/Board'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import LoginPage from './components/LoginPage'
 import SignupPage from './components/SignupPage'
-import MatchPage from './components/MatchPage'
-import DashBoardPage from './components/DashBoardPage'
 
 class App extends Component {
   render() {
@@ -16,8 +14,6 @@ class App extends Component {
           <Route exact path='/' render={ () => <Redirect to='/main' /> } />
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/signup' component={SignupPage} />
-          <Route exact path='/matches' component={MatchPage} />
-          <Route exact path='/DashBoard' component={DashBoardPage} />
         </div>
       </Router>
     )
