@@ -5,44 +5,40 @@ const sign = require('../jwt').sign
 
 const router = new Router()
 
-// router.post('/users', (req, res) => {
-//   const user = {
-//     email: req.body.email,
-//     password: bcrypt.hashSync(req.body.password, 10),
-//     likes: 0
-//   }
+router.post('/users', (req, res) => {
+  const user = {
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password, 10)
+    }
 
-//   User
-//   .create(user)
-//   .then(entity => {
-//     res.send({
-//       id: entity.id,
-//       email: entity.email
-//       // likes: entity.likes
-//     })
-//   })
-//   .catch(err => {
-//     res.status(500).send({
-//       message: 'Something went wrong'
-//     })
-//   })
-// })
+  User
+  .create(user)
+  .then(entity => {
+    res.send({
+      id: entity.id,
+      email: entity.email
+    })
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: 'Something went wrong'
+    })
+  })
+})
 
-// router.get('/users', (req, res) => {
-// 	User.findAll({
-// 	  attributes: ['id', 'email', 'likes']
-// 	})
-// 	  .then(result => {
-// 	    // do something with result
-// 	    res.send({
-// 	    	users: result
-// 	    })
-// 	  })
-// 	  .catch(err => {
-// 	    // there was an error, return some HTTP error code
-// 	    res.status(500).send({error: 'Something went wrong with Postgres'})
-// 	  })
-// })
+router.get('/users', (req, res) => {
+	User.findAll({
+	  attributes: ['id', 'email']
+	})
+	  .then(result => {
+	    res.send({
+	    	users: result
+	    })
+	  })
+	  .catch(err => {
+	    res.status(500).send({error: 'Something went wrong with Postgres'})
+	  })
+})
 
 router.post('/login', (req, res) => {
   User.findOne({
@@ -55,8 +51,6 @@ router.post('/login', (req, res) => {
       res.send({
         jwt: sign(entity.id),
         id: entity.id,
-        // isAdmin: entity.isadmin,
-        // likes: entity.likes
       })
     }
     else {
